@@ -15,5 +15,4 @@ modules:
              dump: 'tests/_data/dump.sql'
     config:
         - Yii2:
-            configFile: 'config/test.php'
             entryUrl: 'http://localhost:8888/index-test.php'
