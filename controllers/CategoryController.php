@@ -22,4 +22,21 @@ class CategoryController extends ActiveController
             ],
         ];
     }
+
+    public function actions()
+    {
+        $actions = parent::actions();
+
+        $actions['view'] = [
+            'class' => 'app\components\ViewCategoryAction',
+            'modelClass' => $this->modelClass,
+            'checkAccess' => [$this, 'checkAccess'],
+        ];
+
+        return $actions;
+    }
+
+    public function checkAccess($action, $model = null, $params = [])
+    {
+    }
 }
