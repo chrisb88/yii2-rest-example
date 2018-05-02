@@ -46,12 +46,11 @@ class Category extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'slug'], 'required'],
-            [['id', 'name', 'slug', 'parentCategory'], 'string'],
+            [['name', 'slug', 'parentCategory'], 'string'],
             [['isVisible'], 'boolean'],
             [['isVisible'], 'default', 'value' => 1],
             [['parentCategory'], 'default', 'value' => null],
             [['slug'], 'unique'],
-            [['id'], 'unique'],
         ];
     }
 
