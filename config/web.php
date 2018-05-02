@@ -54,6 +54,7 @@ $config = [
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'category',
+                    'prefix' => 'api/v1/',
                     'extraPatterns' => ['GET,HEAD {slug}' => 'view'],
                     'tokens' => [
                         '{id}' => '<id:\\w+-\\w+-\\w+-\\w+-\\w+>',
