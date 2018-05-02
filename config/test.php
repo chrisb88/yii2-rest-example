@@ -22,7 +22,20 @@ return [
             'basePath' => __DIR__ . '/../web/assets',
         ],
         'urlManager' => [
+            'enablePrettyUrl' => true,
             'showScriptName' => true,
+            'rules' => [
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'category',
+                    'prefix' => 'api/v1/',
+                    'extraPatterns' => ['GET,HEAD {slug}' => 'view'],
+                    'tokens' => [
+                        '{id}' => '<id:\\w+-\\w+-\\w+-\\w+-\\w+>',
+                        '{slug}' => '<id:\w+>',
+                    ]
+                ],
+            ],
         ],
         'user' => [
             'identityClass' => 'app\models\User',
@@ -36,6 +49,9 @@ return [
                 'domain' => 'localhost',
             ],
             */
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
         ],
     ],
     'params' => $params,

@@ -1,0 +1,19 @@
+actor: ApiTester
+modules:
+    enabled:
+        - REST:
+            url: /api/v1
+            depends: Yii2
+            part: Json
+        - \Helper\Api
+        - Db:
+             dsn: 'sqlite:tests/../test.db'
+             user:
+             password:
+             populate: true # load dump before all tests
+             cleanup: true # load dump for each test
+             dump: 'tests/_data/dump.sql'
+    config:
+        - Yii2:
+            configFile: 'config/test.php'
+            entryUrl: 'http://localhost:8888/index-test.php'
