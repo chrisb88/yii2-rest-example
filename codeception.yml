@@ -24,8 +24,6 @@ coverage:
         include:
             - models/*
             - controllers/*
-            - commands/*
-            - mail/*
         exclude:
             - assets/*
             - config/*
