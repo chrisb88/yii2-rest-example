@@ -71,11 +71,16 @@ class Category extends \yii\db\ActiveRecord
 
     public function extraFields()
     {
-        return ['parent'];
+        return ['parent', 'children'];
     }
 
     public function getParent()
     {
         return $this->hasOne(Category::className(), ['id' => 'parentCategory']);
+    }
+
+    public function getChildren()
+    {
+        return $this->hasMany(Category::className(), ['parentCategory' => 'id']);
     }
 }
