@@ -1,0 +1,8 @@
+actor: FunctionalTester
+modules:
+    enabled:
+        - \Helper\Functional
+        - Yii2
+    config:
+        - Yii2:
+            entryUrl: 'http://localhost:8888/index-test.php'
