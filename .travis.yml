@@ -14,4 +14,4 @@ install:
   - composer update --no-interaction --prefer-source $COMPOSER_FLAGS
 
 script:
-  - vendor\bin\codecept run
+  - vendor/bin/codecept run
