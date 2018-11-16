@@ -1,7 +1,7 @@
 language: php
 
 addons:
-  sqlite: "3"
+  sqlite: 3
 
 php:
   - 7.1
