@@ -1,5 +1,8 @@
 language: php
 
+services:
+  - sqlite3
+
 php:
   - 7.1
   - 7.2
