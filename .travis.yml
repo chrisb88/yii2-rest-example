@@ -8,10 +8,12 @@ env:
   matrix:
     - COMPOSER_FLAGS="--prefer-lowest"
     - COMPOSER_FLAGS="--prefer-stable"
+    - COMPOSER_MODE="install"
+    - COMPOSER_MODE="update"
 
 install:
   - composer self-update
-  - composer update --no-interaction --prefer-source $COMPOSER_FLAGS
+  - composer $COMPOSER_MODE --no-interaction --prefer-source $COMPOSER_FLAGS
 
 script:
   - vendor/bin/codecept run
