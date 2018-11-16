@@ -6,14 +6,13 @@ php:
 
 env:
   matrix:
-    - COMPOSER_FLAGS="--prefer-lowest"
-    - COMPOSER_FLAGS="--prefer-stable"
     - COMPOSER_MODE="install"
-    - COMPOSER_MODE="update"
+    - COMPOSER_MODE="update --prefer-lowest"
+    - COMPOSER_MODE="update --prefer-stable"
 
 install:
   - composer self-update
-  - composer $COMPOSER_MODE --no-interaction --prefer-source $COMPOSER_FLAGS
+  - composer $COMPOSER_MODE --no-interaction --prefer-source
 
 script:
   - vendor/bin/codecept run
